@@ -25,5 +25,7 @@ jobs:
       run: |
         rm -rf ~/ros_ws/src/cv_camera && cp -r ../cv_camera ~/ros_ws/src
         cd ~/ros_ws && source /opt/ros/melodic/setup.bash && catkin_make 
+        source ~/ros_ws/devel/setup.bash & rosrun cv_camera cv_camera_node
+
    
  
