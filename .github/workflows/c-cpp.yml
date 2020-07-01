@@ -15,6 +15,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: ls
       run: ls
-    - name: pwd
-      run: pwd
+    - name: mkdir -p ../ros_ws/src
+      run: mkdir -p ../ros_ws/src
+    - name: cp -r ../cv_camera ../ros_ws/src
+      run: cp -r ../cv_camera ../ros_ws/src
+    - name: cd ../ros_ws && catkin_make
+      run: cd ../ros_ws && catkin_make
+    
     
