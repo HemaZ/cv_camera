@@ -19,6 +19,9 @@ jobs:
       run: cp -r ../cv_camera ../ros_ws/src
     - name: catkin_make
       run: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
+    - name: deploy
+      run: cp -r ../cv_camera ~/
+   
     
     
   clean:
