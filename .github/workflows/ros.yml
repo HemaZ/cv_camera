@@ -19,7 +19,7 @@ jobs:
       run: mkdir -p ../ros_ws/src
     - name: cp -r ../cv_camera ../ros_ws/src
       run: cp -r ../cv_camera ../ros_ws/src
-    - name: cd ../ros_ws && catkin_make
-      run: cd ../ros_ws && catkin_make
+    - name: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
+      run: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
     
     
