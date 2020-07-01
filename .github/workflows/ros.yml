@@ -23,3 +23,10 @@ jobs:
       run: rm -rf ../ros_ws
     
     
+jobs:
+  clean:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: clean
+      run: rm -rf ../ros_ws
