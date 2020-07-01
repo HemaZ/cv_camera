@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: clean
+      run: rm -rf ../ros_ws
     - name: create ROS workspace
       run: mkdir -p ../ros_ws/src
     - name: copy the package to the created ws
@@ -24,10 +26,4 @@ jobs:
         rm -rf ~/ros_ws/src/cv_camera && cp -r ../cv_camera ~/ros_ws/src
         cd ~/ros_ws && source /opt/ros/melodic/setup.bash && catkin_make 
    
-    
-  clean:
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v2
-    - name: clean
-      run: rm -rf ../ros_ws
+ 
