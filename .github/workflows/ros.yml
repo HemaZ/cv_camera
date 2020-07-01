@@ -13,13 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: ls
-      run: ls
-    - name: mkdir -p ../ros_ws/src
+    - name: create ROS workspace
       run: mkdir -p ../ros_ws/src
-    - name: cp -r ../cv_camera ../ros_ws/src
+    - name: copy the package to the created ws
       run: cp -r ../cv_camera ../ros_ws/src
-    - name: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
+    - name: catkin_make
       run: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
     - name: clean
       run: rm -rf ../ros_ws
