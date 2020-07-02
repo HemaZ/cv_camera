@@ -23,6 +23,14 @@ jobs:
       run: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make
     - name: run tests
       run: cd ../ros_ws && source /opt/ros/melodic/setup.bash && catkin_make run_tests
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test_artifacts1
+        path: ../ros_ws/build/test_results/cv_camera/rostest-test_no_yaml.xml
+    - uses: actions/upload-artifact@v2
+      with:
+        name: test_artifacts2
+        path: ../ros_ws/build/test_results/cv_camera/rostest-test_cv_camera.xml
     - name: deploy
       run: |
         rm -rf ~/ros_ws/src/cv_camera && cp -r ../cv_camera ~/ros_ws/src
